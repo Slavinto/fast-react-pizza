@@ -1,16 +1,12 @@
 import { useLoaderData } from "react-router-dom";
-import { getMenu } from "../../services/api-restaurant";
 import { PizzaApi } from "../../types/types";
 import MenuItem from "./menu-item";
 
-export async function loader() {
-    const menu = await getMenu();
-
-    return menu;
-}
-
 function Menu() {
+    // dispatch isLoadedData false
+
     const menu = useLoaderData() as PizzaApi[];
+    // dispatch isLoadedData true
     return (
         <ul className='bg-blue-200 '>
             {menu.map((pizza) => (
