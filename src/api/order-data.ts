@@ -9,21 +9,21 @@ export const order: Order = {
     estimatedDelivery: new Date("2027-04-25T10:00:00"),
     cart: [
         {
-            id: 7,
+            pizzaId: 7,
             name: "Napoli",
             quantity: 3,
             unitPrice: 16,
             totalPrice: 48,
         },
         {
-            id: 5,
+            pizzaId: 5,
             name: "Diavola",
             quantity: 2,
             unitPrice: 16,
             totalPrice: 32,
         },
         {
-            id: 3,
+            pizzaId: 3,
             name: "Romana",
             quantity: 1,
             unitPrice: 15,

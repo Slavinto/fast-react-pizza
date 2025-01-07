@@ -1,20 +1,19 @@
-import { Outlet, useNavigation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import CartOverview from "../features/cart/cart-overview";
 import Header from "./header";
+import LoadingIndicator from "./loading-indicator";
+// import { store } from "../store/store";
 
 const AppLayout = () => {
-    const navigation = useNavigation();
-    const isLoading = navigation.state === "loading";
-
+    // store.dispatch(updateName({ name: "Slava" }));
+    // console.log(store.getState());
     return (
-        <div className='bg-cyan-200 container mx-auto'>
-            {isLoading && <div className='loader' />}
-
+        <div className='grid grid-rows-[auto_1fr_auto] h-screenDvh container relative mx-auto'>
+            <LoadingIndicator />
             <Header />
-            <main>
-                <h1>Content</h1>
+            <main className='overflow-scroll scrollbar-hide'>
+                <Outlet />
             </main>
-            <Outlet />
             <CartOverview />
         </div>
     );

@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
+import CustomLink from "../../ui/custom-link";
 
 function EmptyCart() {
     return (
-        <div>
-            <Link to='/menu'>&larr; Back to menu</Link>
+        <div className='flex flex-col gap-4 text-xl'>
+            <CustomLink path='/menu' text='&larr; Back to menu' />
 
-            <p>Your cart is still empty. Start adding some pizzas :)</p>
+            <p className='font-bold'>
+                Your cart is still empty. <br />
+                Start adding some pizzas 😋
+            </p>
         </div>
     );
 }
